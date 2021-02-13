@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* center elements */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Book excursions button */
+.excursions-button {
+    background-color:red; 
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 50px 10px 50px;
+    margin: 8px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+/* inline buttons css */
+.button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
   }
+  
+/* Bottom fixed PopUp */
+hr{
+    width: 10%;
+    margin-top: -4%;
+    height: 2%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.box {
+    width: 40%;
+    margin: 0 auto;
+    /* background: rgba(255,255,255,0.2); */
+    /* color: white; */
+    padding: 30px;
+    border: 2px solid #fff;
+    /* border-radius: 20px/50px; */
+    border-radius: 10px;
+    background-clip: padding-box;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+.bottom-button {
+    font-size: 1em;
+    padding: 5px;
+    color:black;
+    font-size: 20px;
+    /* border: 2px solid #06D85F;
+    border-radius: 20px/50px; */
+    font-weight: bolder;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
   }
+  /* .button:hover {
+    background: #06D85F;
+  } */
+  
+  /* .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  } */
+  
+  /* .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  } */
+.centered-popup {
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    bottom: -8%;
+    transform: translate(-50%, -50%);
 }
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
