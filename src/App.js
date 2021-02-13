@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "./App.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -42,24 +43,15 @@ function App() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 2000,
-    autoplay: true,
+    speed: 5000,
+    // autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      }
-    ],
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    fade: true,
+    // autoplaySpeed: 5000,
+    // cssEase: "linear",
+    // fade: true,
+    useCSS:false,
+    
     className: "slides"
 
   };
@@ -67,15 +59,23 @@ function App() {
   const slides = () =>
     data.map(d => (
       <div className="container">
+        {/* Arrow Circle Left */}
+        
+        <button className="top-left"><FontAwesomeIcon style={{Color:"red"}} icon={faArrowAltCircleLeft} /></button>
+        
+
+
+        {/*  */}
         <img alt="" src={d.image} style={{ width: "100%", height: "100vh" }} />
         <div className="centered">
-          <h1 >{d.content.title}</h1>
-          <p>Friday June 25 <br /> Arriving 8.30 pm </p>
+          <h1 className="h1">{d.content.title}</h1>
+          {/* <h1 className="h1">MAIMI</h1> */}
+          <p >Friday June 25 <br /> Arriving 8.30 pm </p>
           <button className="excursions-button">Book Excursions</button>
           <div>
-            <button className="button">MIA <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
-            <button className="button">BIM <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
-            <button className="button">HAV <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
+            <button className="button">MIA <FontAwesomeIcon className="icon-size" icon={faArrowAltCircleRight} /></button>
+            <button className="button">BIM <FontAwesomeIcon className="icon-size" icon={faArrowAltCircleRight} /></button>
+            <button className="button">HAV <FontAwesomeIcon className="icon-size" icon={faArrowAltCircleRight} /></button>
             <button className="button">MIA</button>
           </div>
           {/* Bottom fixed PopUp */}
