@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import image1 from "./images/image1.jpg";
 import image2 from "./images/image2.jpg";
 import image3 from "./images/image3.jpg";
+import image4 from "./images/image4.jpeg";
 import Slider from "react-slick";
 import "./App.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -20,24 +21,45 @@ function App() {
       image: image1,
       content: {
         title: "First Slide",
-        title2: "balh22",
+        city: "YOUR MAIMI CITY GUIDE",
       },
     },
     {
       image: image2,
       content: {
         title: "Second Slide",
-        title2: "balh22",
+        city: "YOUR HAVANA CITY GUIDE",
       },
     },
     {
       image: image3,
       content: {
         title: "Third Slide",
-        title2: "balh22",
+        city: "YOUR MAIMI BIMI GUIDE",
       },
     },
+    {
+      image: image4,
+      content: {
+        title: "FORTH Slide",
+        city: "YOUR MAIMI BIMI GUIDE",
+      },
+    }
   ]
+  // const cities = [
+  //   {
+  //     city: "YOUR MAIMI CITY GUIDE",
+      
+  //   },
+  //   {
+  //     city: "YOUR HAVANA CITY GUIDE",
+      
+  //   },
+  //   {
+  //     city: "YOUR MAIMI BIMI GUIDE",
+      
+  //   },
+  // ]
   
 
   const settings = {
@@ -84,7 +106,11 @@ function App() {
         </div>
         <div className="box centered-popup" style={{backgroundColor:"white"}}>
             <hr/>
-            <a className="bottom-button" href="#popup1">YOUR MAIMI CITY GUIDE</a>
+            <a className="bottom-button" href="#popup1">
+              
+            { d.content.city}
+            
+            </a>
           </div>
 
           {/* <div className="overlay">

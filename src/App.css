@@ -15,11 +15,9 @@
 /* ANIMATIONS */
 .h1{
     position: relative;
-    /* transform: translate(0px , 500px);
-    transition-duration: 2s; */
-    /* transition-timing-function: ease-in-out; */
     
-    animation: slide 5s infinite;
+    
+    
     
    
     
@@ -37,17 +35,8 @@
         width: 100%;
       } */
       
-      0% { right: 0; }
-      15% { right: 0; }
-      20% { right: 50%; }
-      35% { right: 50%; }
-      40% { right: 100%; }
-      55% { right: 100%; }
-      60% { right: 200%; }
-      75% { right: 200%; }
-      80% { right: 300%; }
-      95% { right: 300%; }
-      100% { right: 40; }
+     
+
       
       
     
@@ -78,7 +67,10 @@
     margin:  8px 2px;
     cursor: pointer;
     border-radius: 8px;
+    position: relative;
+    
 }
+
 /* inline buttons css */
 .button {
     background-color: transparent;
@@ -148,8 +140,11 @@ hr{
     font-weight: bolder;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s ease-out;
+    /* transition: all 0.3s ease-out; */
   }
+  /* added animaton */
+  
+  
   /* .button:hover {
     background: #06D85F;
   } */
