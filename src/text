@@ -1,0 +1,39 @@
+const slides = () =>
+    data.map(d => (
+      <div className="container">
+        {/* Arrow Circle Left */}
+        
+        <button className="top-left"><FontAwesomeIcon style={{Color:"red"}} icon={faArrowAltCircleLeft} /></button>
+        
+
+
+        
+        <img alt="" src={d.image}  style={{ width: "100%", height: "100vh" }} />
+        <div className="centered">
+          <h1 className="h1">{d.content.title}</h1>
+          {/* <h1 className="h1">MAIMI</h1> */}
+          <p >Friday June 25 <br /> Arriving 8.30 pm </p>
+          <button className="excursions-button">Book Excursions</button>
+          <div>
+            <button className="button first "  >MIA <FontAwesomeIcon className="icon-size" icon={faArrowAltCircleRight} /></button>
+            <button className="button ">BIM <FontAwesomeIcon className="icon-size" icon={faArrowAltCircleRight} /></button>
+            <button className="button">HAV <FontAwesomeIcon className="icon-size" icon={faArrowAltCircleRight} /></button>
+            <button className="button">MIA</button>
+          </div>
+          {/* Bottom fixed PopUp */}
+          
+
+        </div>
+        <div className="box centered-popup" style={{backgroundColor:"white"}}>
+            <hr/>
+            <a className="bottom-button fade-in" href="#popup1">
+              
+            { d.content.city}
+            
+            </a>
+          </div>
+
+          
+      </div>
+    )
+    );

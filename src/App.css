@@ -2,6 +2,7 @@
     position: relative;
     text-align: center;
     color: white;
+    width: 100%;
 }
 /* center elements */
 .centered {
@@ -12,15 +13,27 @@
     /* background-color: teal; */
     width: 100%;
 }
+.right{
+  position: absolute;
+  top: 5%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+.left{
+    position: absolute;
+    top: 5%;
+    right: 90%;
+    transform: translate(40%, -50%);
+    opacity: 0.5;
+    width: 100%;
+}
 /* ANIMATIONS */
 .h1{
     position: relative;
+    /* transform: translateX(-50%); */
     
-    
-    
-    
-   
-    
+    /* animation: slide 25s infinite; */
 }
 @keyframes slide {
     /* from {left:  0px;}
@@ -34,6 +47,17 @@
         margin-left: 0%;
         width: 100%;
       } */
+      0% { right: 0; }
+  15% { right: 0; }
+  20% { right: 100%;  }
+  35% { right: 100%; }
+  40% { right: 200%; }
+  55% { right: 200%; }
+  60% { right: 300%; }
+  75% { right: 300%; }
+  /* 80% { right: 400%; }
+  95% { right: 400%; } */
+  100% { right: 0; }
       
      
 
@@ -53,6 +77,12 @@
     opacity: 0.8;
     cursor: pointer;
   }
+/* for p tag */
+p{
+  position: relative;
+  animation: shake 2.001s;
+  animation-iteration-count: 1;
+}
   
 /* Book excursions button */
 .excursions-button {
@@ -68,8 +98,13 @@
     cursor: pointer;
     border-radius: 8px;
     position: relative;
-    
+    /* animation: shake 2s; */
+    /* animation-iteration-count: 3; */
 }
+@keyframes shake {
+  0% { transform: translateX(-15px) rotate(0deg); }
+}
+
 
 /* inline buttons css */
 .button {
@@ -84,6 +119,21 @@
     margin: 50px 5px;
     cursor: pointer;
     font-weight: bolder;
+}
+/*  */
+.first{
+  /* color: red; */
+  position: relative;
+  /* animation: second 2s  infinite; */
+}
+@keyframes second{
+  0%{
+    /* color: red; */
+    opacity: 0.3;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 .icon-size{
     font-size: 25px;
@@ -141,69 +191,38 @@ hr{
     text-decoration: none;
     cursor: pointer;
     /* transition: all 0.3s ease-out; */
+    /* position: relative; */
+    /* animation: slide1 5s infinite; */
   }
   /* added animaton */
-  
-  
-  /* .button:hover {
-    background: #06D85F;
-  } */
-  
-  /* .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-  }
-  .overlay:target {
-    visibility: visible;
+  /* .fade-in {
     opacity: 1;
-  } */
-  
-  /* .popup {
-    margin: 70px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    width: 30%;
-    position: relative;
-    transition: all 5s ease-in-out;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
   }
   
-  .popup h2 {
-    margin-top: 0;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-  .popup .close:hover {
-    color: #06D85F;
-  }
-  .popup .content {
-    max-height: 30%;
-    overflow: auto;
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   } */
+ 
+  
+  
 .centered-popup {
     position: absolute;
     /* top: 50%; */
     left: 50%;
     bottom: -8%;
     transform: translate(-50%, -50%);
+    
 }
+
   @media screen and (max-width: 700px){
     .box{
       width: 70%;
