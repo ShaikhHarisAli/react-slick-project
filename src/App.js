@@ -58,13 +58,13 @@ const CarouselUI = ({ position, total, handleClick, children }) => (
       <Dots right>
         {arr.map((val, index) => (
           <Dot key={index} onClick={handleClick} data-position={index} >
-            <span style={{ color: index === position ? "red" : "white",transition: "0.8s ",transitionTimingFunction:"ease-in-out" }}>
+            <span style={{ color: index === position ? "red" : "white",transition: "0.9s ",transitionTimingFunction:"ease-in-out" }}>
               {val.toLocaleUpperCase()}
             </span>
             {index === position ? (
               <FontAwesomeIcon
                 className="icon-size"
-                style={{ color: "red",transition: "0.8s ",transitionTimingFunction:"ease-in-out" }}
+                style={{ color: "red",transition: "0.9 ",transitionTimingFunction:"ease-in-out" }}
                 icon={faArrowAltCircleRight}
                 
               />
@@ -72,7 +72,7 @@ const CarouselUI = ({ position, total, handleClick, children }) => (
               <FontAwesomeIcon
                 onClick={handleClick}
                 icon={faArrowAltCircleRight}
-                style={{ color: "white" ,transition: "0.8s ",transitionTimingFunction:"ease-in-out"}}
+                style={{ color: "white" ,transition: "0.9s ",transitionTimingFunction:"ease-in-out"}}
                 data-position={index}
               />
             )}
