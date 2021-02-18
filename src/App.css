@@ -16,23 +16,24 @@
 .right {
   position: absolute;
   top: 0%;
-  left: 94%;
+  left: 96%;
   transform: translate(-50%, -50%);
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.384);
 }
 .left {
   position: absolute;
   top: 0%;
   right: 49%;
   transform: translate(50%, -50%);
-  opacity: 0.2;
+  opacity: 0.5;
   width: 100%;
+  color: rgba(255, 255, 255, 0.384);
 }
 @media screen and (max-width: 780px) {
   .right {
     position: absolute;
     top: 0%;
-    left: 85%;
+    left: 88%;
     transform: translate(-50%, -50%);
     opacity: 0.5;
   }
@@ -46,9 +47,8 @@
   }
 }
 
-
-/* left arrow top-left */
-.top-left {
+/*  arrow top-left */
+/* .top-left {
   position: absolute;
   top: 8%;
   left: 5%;
@@ -59,17 +59,16 @@
   opacity: 0.8;
   cursor: pointer;
   z-index: 1;
-}
+} */
 /* for p tag */
 p {
-  /* display: inline-block; */
   position: relative;
   animation: shake 2.001s;
   animation-iteration-count: 1;
 }
 
 .transition {
-  animation: moveInRight 1s;
+  animation: moveInRight 0.5s;
   display: inline-block;
 }
 
@@ -144,8 +143,9 @@ p {
   /* top left button */
   .top-left {
     position: absolute;
-    top: 6%;
-    left: 3%;
+    top: 4%;
+    left: 10%;
+
     cursor: pointer;
   }
   /* inline buttons and icons */
@@ -169,7 +169,7 @@ hr {
 
 .box {
   width: 40%;
-  padding: 30px 30px 30px 0;
+  padding: 30px 0px 30px 0;
   border: 2px solid #fff;
   border-radius: 10px 10px 0px 0;
   background-clip: padding-box;
@@ -184,21 +184,33 @@ hr {
   font-weight: bolder;
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
 }
 
 .centered-popup {
   position: absolute;
-  /* top: 50%; */
   left: 50%;
   bottom: -6%;
   transform: translate(-50%, -50%);
+  /* width: 100%; */
 }
 
 @media screen and (max-width: 700px) {
   .box {
     width: 70%;
+    text-align: center;
   }
-  .popup {
-    width: 70%;
+}
+
+@media screen and (max-width: 400px) {
+  .box {
+    width: 90%;
+    text-align: center;
+  }
+  .centered-popup {
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+    transform: translate(-50%, -50%);
   }
 }

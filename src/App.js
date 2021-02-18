@@ -5,10 +5,9 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { Fade, Slide } from "react-reveal";
+import { Fragment, useState } from "react";
+import { Fade, Slide, Reveal } from "react-reveal";
 import styled, { css } from "styled-components";
-
 
 import React from "react";
 import makeCarousel from "react-reveal/makeCarousel";
@@ -16,7 +15,6 @@ import makeCarousel from "react-reveal/makeCarousel";
 // but you can use any other effect
 // we'll use styled components for this tutorial
 // but you can use any other styling options ( like plain old css )
-
 
 const Dot = styled.span`
   font-size: 1.5em;
@@ -43,7 +41,11 @@ const CarouselUI = ({ position, total, handleClick, children }) => (
   <Container>
     <Children>
       {children}
-      <Arrow style={{ color: "white", fontSize: "100px" }} data-position={1}>
+      <Arrow
+        className="top-left"
+        style={{ color: "white", fontSize: "100px" }}
+        data-position={1}
+      >
         <FontAwesomeIcon
           className="icon-size"
           icon={faArrowAltCircleLeft}
@@ -100,49 +102,27 @@ const Arrow = styled.a`
           left: 90%;
         `
       : css`
-          left: 0%;
+          left: 5%;
         `}
 `;
 
-
 function App() {
-  // images
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true,
-    useCSS: true,
-    beforeChange: (current, next) => setCurrentSlide(current),
-    customPaging: function (i) {
-      return <a>{i}</a>;
-    },
-    dots: true,
-    dotsClass: "slick-dots slick-thumb",
-    className: "slides",
-  };
-
   const slider = (
     <Carousel style={{ height: "100vh" }}>
       {/* slide 1 */}
-      <Fade>
+      <Fade duration={500}>
         <div className="container image1">
           <div className="centered">
             <div className="abc">
               <h1 className="transition">MAIMI</h1>
 
-              <Slide right>
+              <Slide right duration={500}>
                 <h1 className="right"> BIMI </h1>
               </Slide>
             </div>
 
             <p>
-              Friday June 25 <br /> Arriving 8.30 pm{" "}
+              WEDNESDAY JUNE 23 <br /> ARRIVING 9.30 AM{" "}
             </p>
 
             <a href="#" className="excursions-button">
@@ -150,49 +130,54 @@ function App() {
             </a>
           </div>
           {/* Bottom fixed PopUp */}
+
           <div
-            className="box centered-popup"
+            className="box centered-popup "
             style={{ backgroundColor: "white" }}
           >
             <hr />
-            <a href="#" className="bottom-button fade-in" href="#popup1">
-              YOUR MAIMI CITY GUIDE
-            </a>
+            <Fade>
+              <a href="#" className="bottom-button " href="#popup1">
+                YOUR MAIMI CITY GUIDE
+              </a>
+            </Fade>
           </div>
         </div>
       </Fade>
       {/* slide 2 */}
-      <Fade>
+      <Fade duration={500}>
         <div className="container image2">
           <div className="centered">
-            <Slide right>
+            <Slide right duration={500} duration={500}>
               <h1 className="left">BIMI</h1>
             </Slide>
-            <Slide right>
+            <Slide right duration={500}>
               <h1>BIMINI</h1>
             </Slide>
-            <Slide right>
+            <Slide right duration={500}>
               <h1 className="right">MIAMI</h1>
             </Slide>
 
             <p>
-              Friday June 25 <br /> Arriving 8.30 pm{" "}
+              THUR JUNE 24 <br /> ARRIVING 7.00AM{" "}
             </p>
 
             <a href="#" className="excursions-button">
               Book Excursions
             </a>
           </div>
-          {/* Bottom fixed PopUp */}
+          {/* Bottom fixed  */}
+
           <div
             className="box centered-popup"
             style={{ backgroundColor: "white" }}
           >
             <hr />
-
-            <a href="#" className="bottom-button fade-in" href="#popup1">
-              YOUR BIMINI CITY GUIDE
-            </a>
+            <Fade>
+              <a href="#" className="bottom-button " href="#popup1">
+                YOUR BIMINI CITY GUIDE
+              </a>
+            </Fade>
           </div>
         </div>
       </Fade>
@@ -200,50 +185,52 @@ function App() {
       <Fade>
         <div className="container image3">
           <div className="centered">
-            <Slide right>
+            <Slide right duration={500}>
               <h1 className="left">BIMI</h1>
             </Slide>
-            <Slide right>
+            <Slide right duration={500}>
               <h1>HAVANA</h1>
             </Slide>
-            <Slide right>
+            <Slide right duration={500}>
               <h1 className="right">MIAMI</h1>
             </Slide>
 
             <p>
-              Friday June 25 <br /> Arriving 8.30 pm{" "}
+              FRIDAY JUNE 25 <br /> ARRIVING 8.30AM{" "}
             </p>
 
             <a href="#" className="excursions-button">
               Book Excursions
             </a>
           </div>
-          {/* Bottom fixed PopUp */}
+          {/* Bottom fixed  */}
+
           <div
             className="box centered-popup"
             style={{ backgroundColor: "white" }}
           >
             <hr />
-
-            <a href="#" className="bottom-button fade-in" href="#popup1">
-              YOUR HAVANA CITY GUIDE
-            </a>
+            <Fade duration={500}>
+              <a href="#" className="bottom-button fade-in" href="#popup1">
+                YOUR HAVANA CITY GUIDE
+              </a>
+            </Fade>
           </div>
         </div>
       </Fade>
       {/* slide 4 */}
-      <Fade>
+      <Fade duration={500}>
         <div className="container image4">
           <div className="centered">
-            <Slide right>
+            <Slide right duration={500}>
               <h1 className="left">HAVANA</h1>
             </Slide>
-            <Slide right>
+            <Slide right duration={500}>
               <h1>MIAMI</h1>
             </Slide>
 
             <p>
-              Friday June 25 <br /> Arriving 8.30 pm{" "}
+              SAT JUNE 26 <br /> Arriving 10.00AM{" "}
             </p>
 
             <a href="#" className="excursions-button">
@@ -256,9 +243,11 @@ function App() {
             style={{ backgroundColor: "white" }}
           >
             <hr />
-            <a className="bottom-button fade-in" href="#popup1">
-              YOUR MAIMI CITY GUIDE
-            </a>
+            <Fade duration={500}>
+              <a className="bottom-button " href="#popup1">
+                YOUR MAIMI CITY GUIDE
+              </a>
+            </Fade>
           </div>
         </div>
       </Fade>
