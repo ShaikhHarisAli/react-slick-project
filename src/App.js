@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useState } from "react";
+import ScrollContainer from 'react-indiana-drag-scroll';
 import { Fade, Slide, Reveal } from "react-reveal";
 import styled, { css } from "styled-components";
 
@@ -56,21 +57,22 @@ const CarouselUI = ({ position, total, handleClick, children }) => (
       </Arrow>
       <Dots right>
         {arr.map((val, index) => (
-          <Dot key={index} onClick={handleClick} data-position={index}>
-            <span style={{ color: index === position ? "red" : "white" }}>
+          <Dot key={index} onClick={handleClick} data-position={index} >
+            <span style={{ color: index === position ? "red" : "white",transition: "0.8s ",transitionTimingFunction:"ease-in-out" }}>
               {val.toLocaleUpperCase()}
             </span>
             {index === position ? (
               <FontAwesomeIcon
                 className="icon-size"
-                style={{ color: "red" }}
+                style={{ color: "red",transition: "0.8s ",transitionTimingFunction:"ease-in-out" }}
                 icon={faArrowAltCircleRight}
+                
               />
             ) : (
               <FontAwesomeIcon
                 onClick={handleClick}
                 icon={faArrowAltCircleRight}
-                style={{ color: "white" }}
+                style={{ color: "white" ,transition: "0.8s ",transitionTimingFunction:"ease-in-out"}}
                 data-position={index}
               />
             )}
@@ -148,7 +150,7 @@ function App() {
       <Fade duration={500}>
         <div className="container image2">
           <div className="centered">
-            <Slide right duration={500} duration={500}>
+            <Slide right duration={500} >
               <h1 className="left">BIMI</h1>
             </Slide>
             <Slide right duration={500}>
@@ -182,7 +184,7 @@ function App() {
         </div>
       </Fade>
       {/* slide 3 */}
-      <Fade>
+      <Fade duration={500}>
         <div className="container image3">
           <div className="centered">
             <Slide right duration={500}>
@@ -230,7 +232,7 @@ function App() {
             </Slide>
 
             <p>
-              SAT JUNE 26 <br /> Arriving 10.00AM{" "}
+              SAT JUNE 26 <br /> ARRIVING 10.00AM{" "}
             </p>
 
             <a href="#" className="excursions-button">
@@ -254,7 +256,11 @@ function App() {
     </Carousel>
   );
 
-  return <div className="App">{slider}</div>;
+  return <div className="App">
+    <ScrollContainer className="scroll-container" activationDistance={1} >
+    {slider}
+    </ScrollContainer>
+  </div>;
 }
 
 export default App;
