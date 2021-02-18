@@ -19,6 +19,8 @@
   left: 96%;
   transform: translate(-50%, -50%);
   color: rgba(255, 255, 255, 0.384);
+  transition: 1s;
+  transition-timing-function: ease-in-out;
 }
 .left {
   position: absolute;
@@ -28,6 +30,8 @@
   opacity: 0.5;
   width: 100%;
   color: rgba(255, 255, 255, 0.384);
+  transition: 1s;
+  transition-timing-function: ease-in-out;
 }
 @media screen and (max-width: 780px) {
   .right {
@@ -36,6 +40,7 @@
     left: 88%;
     transform: translate(-50%, -50%);
     opacity: 0.5;
+    
   }
   .left {
     position: absolute;
@@ -68,7 +73,7 @@ p {
 }
 
 .transition {
-  animation: moveInRight 0.5s;
+  animation: moveInRight 0.8s;
   display: inline-block;
 }
 

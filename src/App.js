@@ -154,7 +154,7 @@ function App() {
               <h1 className="left">BIMI</h1>
             </Slide>
             <Slide right duration={500}>
-              <h1>BIMINI</h1>
+              <h1 className="transition">BIMINI</h1>
             </Slide>
             <Slide right duration={500}>
               <h1 className="right">MIAMI</h1>
@@ -191,7 +191,7 @@ function App() {
               <h1 className="left">BIMI</h1>
             </Slide>
             <Slide right duration={500}>
-              <h1>HAVANA</h1>
+              <h1 className="transition">HAVANA</h1>
             </Slide>
             <Slide right duration={500}>
               <h1 className="right">MIAMI</h1>
@@ -228,7 +228,7 @@ function App() {
               <h1 className="left">HAVANA</h1>
             </Slide>
             <Slide right duration={500}>
-              <h1>MIAMI</h1>
+              <h1 className="transition">MIAMI</h1>
             </Slide>
 
             <p>
